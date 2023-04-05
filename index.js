@@ -1,11 +1,11 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
-const sheapes = require('shapes.js')
+const {Triangle, Circle, Square} = require('./lib/shapes')
 
-const userInput = [
+inquirer.prompt([
     { // user input for the SVG text
         type: 'input',
-        name: 'text',
+        name: 'userText',
         message: 'Enter up to 3 characters for the SVG logo text',
         validate: function (input){
             return input.length <=3
@@ -27,6 +27,22 @@ const userInput = [
         name: 'colorShape',
         message: 'What color do you want your logo shape to be?',
     },
-]
+])
 
+.then((data) => {
+    const {userText, colorText, shape, colorShape} = data
+    let svgImg
+    switch(shape) {
+        case "triangle":
+            svgImg = new Triangle(colorShape, colorText, userText)
+            break
+        case "circle":
+            svgImg = new Circle(colorShape, colorText, userText)
+            break
+        case "square":
+            svgImg = new Square(colorShape, colorText, userText)
+            break
+    }
 
+    fs.writeFileSync('./images', svgImg.render())
+})

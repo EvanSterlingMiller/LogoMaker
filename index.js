@@ -32,7 +32,7 @@ inquirer.prompt([
 .then((data) => {
     const {userText, colorText, shape, colorShape} = data
     let svgImg
-    switch(shape) {
+    switch(shape){
         case "triangle":
             svgImg = new Triangle(colorShape, colorText, userText)
             break
@@ -44,5 +44,5 @@ inquirer.prompt([
             break
     }
 
-    fs.writeFileSync('./images', svgImg.render())
+    fs.writeFile('./images', svgImg.render())
 })

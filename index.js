@@ -30,7 +30,7 @@ inquirer.prompt([
 ])
 
 .then((data) => {
-    const {userText, colorText, shape, colorShape} = data
+    const {userText, colorText, shape, colorShape } = data
     let svgImg
     switch(shape){
         case "triangle":
@@ -44,5 +44,5 @@ inquirer.prompt([
             break
     }
 
-    fs.writeFile('./images', svgImg.render())
+    fs.writeFileSync('./images/SVGlogo.svg', svgImg.render())
 })

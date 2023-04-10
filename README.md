@@ -23,6 +23,12 @@
 
     Evan Miller
 
+    ## Example and Demo
+
+    ![example](./images/SVGlogo.svg)
+
+    *Demo [video](https://drive.google.com/file/d/1y6b6GepICyQP3m_5HZnw7Mmg1n0l9s3M/view)
+
     ## License
 
     MIT

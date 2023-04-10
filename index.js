@@ -12,9 +12,9 @@ inquirer.prompt([
         },
     },
     {//  user input of the text color
-       type: 'input',
-       name:  'colorText',
-       message: 'What color do you want your logo text?',
+        type: 'input',
+        name:  'colorText',
+        message: 'What color do you want your logo text?',
     },
     {// user input for the shape of the logo
         type: 'list',
